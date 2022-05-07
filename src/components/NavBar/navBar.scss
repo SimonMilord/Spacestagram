@@ -1,0 +1,13 @@
+@import '../../styles/partials/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sniglet&display=swap');
+
+.nav {
+  background-color: #000;
+  padding: 2rem;
+  color: #fff;
+  @include display-flex(row,flex-start,center);
+  &__logo {
+    font-family: 'Goldman', Arial;
+    font-size: 32px;
+  }
+}

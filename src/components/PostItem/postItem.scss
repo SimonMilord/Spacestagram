@@ -1,0 +1,43 @@
+@import '../../styles/partials/mixins';
+
+.card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+
+  &__nav {
+    padding: 1rem;
+    @include display-flex(row,flex-start,center);
+  }
+  &__nasaLogo {
+    height: 24px;
+    padding-right: 8px;
+  }
+  &__content {
+    padding: 1rem;
+  }
+  &__img {
+    width: 100%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    height: 500px;
+  }
+  &__info {
+    margin: 1rem 0rem;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__heart {
+    height: 24px;
+    cursor: pointer;
+  }
+
+  &__info {
+    @include display-flex(row,space-between,center);
+  }
+
+  &__desc {
+    line-height: 1.5;
+  }
+}
