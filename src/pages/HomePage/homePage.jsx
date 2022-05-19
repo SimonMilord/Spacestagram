@@ -7,14 +7,13 @@ import Loader from "../../components/Loader/loader";
 const URL = process.env.REACT_APP_API_URL;
 const KEY = process.env.REACT_APP_API_KEY;
 
-function HomePage(props) {
+export default function HomePage(props) {
 
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(()=> {
-    console.log("in the useeffect");
     getPosts();
   }, []);
 
@@ -25,16 +24,23 @@ function HomePage(props) {
       .then((res) => {
         setPosts(res.data);
         setIsLoading(false);
-        console.log(res.data);
       })
       .catch((err) => {
-        setErrorMessage("Unable to fetch Nasa pictures");
+        setErrorMessage("Unable to fetch Nasa pictures 😔");
         setIsLoading(false);
       });
   }
 
+  const genNewPosts = () => {
+    getPosts();
+  }
+
   return (
     <div className='homepage'>
+      <div className='top'>
+        <button className='newPosts' onClick={genNewPosts}>More Pictures 🚀</button>
+      </div>
+      {errorMessage ? <span>{errorMessage}</span> : <></>}
       {isLoading ? <Loader /> :
       <ul className='list'>
         {posts && posts.map((post, key) => (
@@ -45,5 +51,3 @@ function HomePage(props) {
     </div>
   );
 }
-
-export default HomePage;

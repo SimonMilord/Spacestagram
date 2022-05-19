@@ -1,13 +1,33 @@
 @import '../../styles/partials/mixins';
 
 .homepage {
-  margin-top: 80px;
+  // margin-top: 30px;
   @include display-flex(column,center,center);
 
+  .top {
+
+    .newPosts {
+      margin: 2rem 0rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #0B3D91;
+      color: white;
+      @include tablet {
+        margin: 3rem 0rem 1rem 0rem;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: blue;
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
   .list {
     @include display-flex(column,center,center);
     padding: 1rem;
-    // max-width: 60%;
     @include tablet {
       max-width: 700px;
       padding: 2rem;
