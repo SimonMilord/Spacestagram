@@ -17,7 +17,7 @@ function PostItem(props) {
   }
 
   return (
-    <div className='card'>
+    <div className='card' tabIndex={0}>
       <div className='card__nav'>
         <img className="card__nasaLogo" src={nasaLogo} alt="nasa logo"></img>
         <p>Nasa</p>
